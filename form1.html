@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Class Registration Form</title>
+    <style>
+        body{
+    font-family: 'Segoe UI', 'sans-serif';
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+ .form-container{
+    max-width: 500px;
+    margin: auto;
+    background-color: #ffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ h1{
+    text-align: center;
+    color: #666;
+} 
+
+p{
+    text-align: center;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+form label{
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #444;
+}
+
+input[type="text"]
+input[type="email"]
+input[type="tel"]
+select{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #acc;
+    border-radius: 20px;
+    font-size: 14px;
+    outline: none;
+    cursor: pointer;
+}
+/* ✅ Select tidak terlihat sebelum diklik */
+select {
+    color: transparent; /* sembunyikan teks awal */
+    background-color: #fff;
+    appearance: none; /* hilangkan arrow default */
+}
+
+/* ✅ Tampilkan teks saat dropdown dibuka atau sudah pilih */
+select:focus,
+select:valid {
+    color: #444;
+}
+
+/* ✅ Tampilkan panah custom*/
+select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+} 
+
+/* Placeholder option tetap abu-abu */
+option[disabled] {
+    color: #aaa;
+}
+
+
+
+fieldset{
+    margin-top: 20px;
+    border: none;
+}
+
+ fieldset legend{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+fieldset label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+.agreement{
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+button{
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background-color: #007804;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #005fa3;
+}
+    </style>
+</head>
+
+
+<body>
+    <div class="form-container">
+        <h1>Class Registration Form</h1>
+        <p>Silakan isi formulir di bawah ini untuk mendaftar kelas kami</p>
+        <!-- Nama Depan -->
+        <form action="/form1.html" method="post" autocomplete="on">
+            <label for="first-name">Nama Depan</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Contoh : Laura Aulia Putri" maxtlength="20">
+            <!-- Nama Belakang -->
+            <label for="last-name">Nama Belakang</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Contoh : Piliang " maxtlength="20">
+            <!-- Email -->
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="nama@gmail.com" required>
+            <!-- Nomor HP -->
+            <label for="phone">Nomor HP</label>
+            <input type="tel" id="phone" name="phone" placeholder="08xxxxxxx" required>
+            <!-- Level Kelas -->
+            <!-- <label for="class-level">Level Kelas</label>
+            <select name="class-level" id="class-level" required></select>
+            <option value="" disable selected>Pilih Level Kelas</option>
+            <option value="beginner">Pemula</option>
+            <option value="intermediate">Menengah</option>
+            <option value="advanced">Lanjutan</option> -->
+             <label for="class-level">Level Kelas</label>
+            <select id="class-level" name="class-level" required>
+                <option value="" disabled selected hidden>Pilih Level Kelas</option>
+                <option value="beginner">Pemula</option>
+                <option value="intermediate">Menengah</option>
+                <option value="advanced">Lanjutan</option>
+            </select>
+
+            <!-- Hari Kelas -->
+            <fieldset>
+                <legend>Pilih Hari Kelas</legend>
+                <label><input type="checkbox" name="days" value="monday">Senin</label>
+                <label><input type="checkbox" name="days" value="tuesday">Selasa</label>
+                <label><input type="checkbox" name="days" value="wednesday">Rabu</label>
+                <label><input type="checkbox" name="days" value="thursday">Kamis</label>
+                <label><input type="checkbox" name="days" value="friday">Jumat</label>
+                <label><input type="checkbox" name="days" value="saturday">Sabtu</label>
+            </fieldset>
+            <!-- Persetujuan-->
+            <label class="agreement">
+                <input type="checkbox" name="agreement" required>
+                Saya setuju dengan syarat dan ketentuan pendaftaran kelas
+            </label>
+            <!-- Tombol Submit -->
+            <button type="submit">Daftar Sekarang</button>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
